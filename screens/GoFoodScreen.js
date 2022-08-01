@@ -1,11 +1,8 @@
 
 import React, { useLayoutEffect } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar , Dimensions} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Header from '../components/Header';
-import MenuHeader from '../components/MenuHeader';
-import MenuVoucher from '../components/MenuVoucher';
-import MenuBanner from '../components/MenuBanner';
+import HeaderLocation from '../components/HeaderLocation';
 import NavigationBottom from '../components/NavigationBottom';
  
 let ScreenHeight = Dimensions.get("window").height;
@@ -21,7 +18,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    zIndex: 9,
+    zIndex: 9
   },
   bottom: {
     position: 'absolute',
@@ -32,7 +29,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const HomeScreen = () => {
+const GoFoodScreen = () => {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -44,13 +41,11 @@ const HomeScreen = () => {
   return (
     <SafeAreaView>
       <View style={styles.header}>
-        <Header />
+        <HeaderLocation />
       </View>
       <ScrollView>
         <View style={styles.container}>
-          <MenuHeader />
-          <MenuVoucher />
-          <MenuBanner />
+            <Text>GO FOOD</Text>
         </View>
       </ScrollView>
       <View style={styles.bottom}>
@@ -59,5 +54,5 @@ const HomeScreen = () => {
     </SafeAreaView>
   );
 }
-export default HomeScreen;
+export default GoFoodScreen;
 
