@@ -4,12 +4,14 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar , Dimension
 import { useNavigation } from '@react-navigation/native';
 import HeaderLocation from '../components/HeaderLocation';
 import NavigationBottom from '../components/NavigationBottom';
+import InputSearch from '../components/InputSearch';
+import MenuCardsRow from '../components/MenuCardsRow';
  
 let ScreenHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
-    paddingTop: StatusBar.currentHeight + 70,
+    paddingTop: StatusBar.currentHeight + 120,
     paddingBottom: 50,
     minHeight: ScreenHeight + 100, // 100 is to overflow
   },
@@ -42,10 +44,14 @@ const GoFoodScreen = () => {
     <SafeAreaView>
       <View style={styles.header}>
         <HeaderLocation />
+        <InputSearch />
       </View>
       <ScrollView>
         <View style={styles.container}>
-            <Text>GO FOOD</Text>
+            <MenuCardsRow  titleRow='A Đệ Quán' />
+            <MenuCardsRow titleRow='Không Say Không về' />
+            <MenuCardsRow titleRow='Bạn tôi' />
+            <MenuCardsRow titleRow='La Cà Quán' />
         </View>
       </ScrollView>
       <View style={styles.bottom}>

@@ -20,7 +20,7 @@ const iconClose = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa1
 const iconDown = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc1.png');
 const iconSearchMini = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc2.png');
 const iconStar = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc3.png');
-const iconHeart = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc2.png');
+const iconHeart = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc4.png');
 
 export {
     iconSearch, iconUser,

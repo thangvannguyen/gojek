@@ -1,73 +1,69 @@
 
 import React from 'react';
-import { StyleSheet, View, Image , TextInput, TouchableOpacity, StatusBar } from 'react-native';
-import { iconSearch, iconUser } from '../constants/icons';
+import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View, Image, Text, TouchableOpacity, StatusBar } from 'react-native';
+import { iconClose, iconDown, iconHeart } from '../constants/icons';
 
-export default  function HeaderLocation(){
-  return (
-    <View style={styles.container}>
-        <View style={styles.boxSearch}>
-            <View style={styles.boxIconSearch} >
-            <Image style={styles.iconSearch} source={iconSearch} />
+export default function HeaderLocation() {
+    const navigation = useNavigation();
+    return (
+        <View style={styles.container}>
+            <View style={styles.boxLocation}>
+                < TouchableOpacity onPress={() => navigation.push('Home')}>
+                    <Image style={styles.iconClose} source={iconClose} />
+                </TouchableOpacity>
+                <Text style={styles.textLocation}>
+                    82/12 Nguyễn Xí
+                </Text>
+                <Image style={styles.iconDown} source={iconDown} />
             </View>
-            <TextInput style={styles.inputSearch} placeholder="Tìm dịch vụ, món ăn, địa chỉ..." />
+            <View style={styles.boxCollection}>
+                <TouchableOpacity>
+                    <Image style={styles.iconHeart} source={iconHeart} />
+                </TouchableOpacity>
+            </View>
         </View>
-        <View style={styles.boxUser}>
-        <TouchableOpacity>
-            <Image style={styles.iconUser} source={iconUser}/>
-        </TouchableOpacity>
-        </View>
-    </View>
-  );
+    );
 }
 const styles = StyleSheet.create({
     container: {
-      flexDirection:'row',
-      backgroundColor:'#00880C',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: 10,
-      width: '100%',
-      paddingTop: StatusBar.currentHeight + 10,
+        flexDirection: 'row',
+        backgroundColor: '#FFF',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+        width: '100%',
+        paddingTop: StatusBar.currentHeight + 10,
     },
-    boxSearch:{
+    boxLocation: {
         display: 'flex',
-        flexDirection:'row',
+        flexDirection: 'row',
         width: '85%',
-        position: 'relative',
         borderRadius: 50,
         overflow: 'hidden',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
-    inputSearch:{
-      height: 40,
-      padding: 10,
-      paddingLeft: 50,
-      borderRadius: 50,
-      width: '100%',
-      backgroundColor:'#FAFAFA',
-    },
-    boxIconSearch: {
-        zIndex: 2,
-        position: 'absolute',
-        top: 5,
-        left: 5,
-    },
-    iconSearch: {
-        width: 32, 
-        height: 32,
-    },
-    boxUser:{
-        height: 40,
-        width: 40,
-        borderRadius: 40,
+    boxCollection: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        overflow: 'hidden',
-        backgroundColor:'#FAFAFA',
     },
-    iconUser:{
-        width: 32,
-        height: 32,
+    textLocation: {
+        paddingLeft: 10,
+        fontWeight: '500',
+        fontSize: 16
+    },
+    iconClose: {
+        width: 25,
+        height: 25,
+    },
+    iconDown: {
+        width: 25,
+        height: 25,
+    },
+    iconHeart: {
+        width: 25,
+        height: 25,
     }
 });
