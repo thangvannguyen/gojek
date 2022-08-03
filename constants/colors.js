@@ -7,3 +7,4 @@
 // #AD242E -> Background red 2 event
 // #01870C -> Color green text btn
 // #E9FFEA -> background green btn
+// #ED2736 -> background red

@@ -22,10 +22,14 @@ const iconSearchMini = require('../assets/z3611590437043_82f396b089c5577f047fd8e
 const iconStar = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc3.png');
 const iconHeart = require('../assets/z3611590437043_82f396b089c5577f047fd8ed0fa196dc4.png');
 
+const iconPrevious = require('../assets/z3616555070031_dfe536a3ece3ee3ee12924d97aefb0eb.png');
+const iconCarShip = require('../assets/z3616555070031_dfe536a3ece3ee3ee12924d97aefb0eb1.png');
+const iconBell = require('../assets/z3616555070031_dfe536a3ece3ee3ee12924d97aefb0eb2.png');
 export {
     iconSearch, iconUser,
     iconGoSend, iconGoCar, iconGoRide, iconGoFood, iconDiscount,
     iconHome, iconPromotion, iconOrder, iconMailbox,
     iconHomeActive, iconPromotionActive, iconOrderActive, iconMailboxActive,
-    iconClose, iconDown, iconSearchMini, iconStar, iconHeart
+    iconClose, iconDown, iconSearchMini, iconStar, iconHeart,
+    iconPrevious, iconCarShip, iconBell,
 };
