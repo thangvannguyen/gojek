@@ -5,12 +5,13 @@ import { useNavigation } from '@react-navigation/native';
 import HeaderProductBack from '../components/HeaderProductBack';
 import NavigationBellBottom from '../components/NavigationBellBottom';
 import MenuCardsRow from '../components/MenuCardsRow';
+import TimeShip from '../components/TimeShip';
  
 let ScreenHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
-    paddingTop: StatusBar.currentHeight + 120,
+    paddingTop: StatusBar.currentHeight + 70,
     paddingBottom: 50,
     minHeight: ScreenHeight + 100, // 100 is to overflow
   },
@@ -46,6 +47,7 @@ const ListProductScreen = () => {
       </View>
       <ScrollView>
         <View style={styles.container}>
+            <TimeShip text="Giao hàng trong 20 phút" />
             <MenuCardsRow  titleRow='A Đệ Quán' />
             <MenuCardsRow titleRow='Không Say Không về' />
             <MenuCardsRow titleRow='Bạn tôi' />
