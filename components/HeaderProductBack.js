@@ -25,6 +25,11 @@ const styles = StyleSheet.create({
         padding: 10,
         width: '100%',
         paddingTop: StatusBar.currentHeight + 10,
+        shadowOffset: { width: -2, height: 4 },
+        shadowColor: '#171717',
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 3,
     },
     boxBack: {
         display: 'flex',
@@ -40,3 +45,4 @@ const styles = StyleSheet.create({
         height: 25,
     },
 });
+

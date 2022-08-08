@@ -1,10 +1,9 @@
 
 import React from 'react';
-import { StyleSheet, View, Image, Text, Dimensions } from 'react-native';
-import { iconStar } from '../constants/icons';
+import { StyleSheet, View, Image, Text, Dimensions, TouchableOpacity } from 'react-native';
 
 
-export default function CardCateFood({ title = '', imageUrl = 'https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg' }) {
+export default function CardFood({ title = '', imageUrl = 'https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg' }) {
     return (
         <View style={styles.container}>
             <View style={styles.boxCardTop}>
@@ -13,16 +12,17 @@ export default function CardCateFood({ title = '', imageUrl = 'https://img.freep
                 </View>
                 <View style={styles.boxEvent}>
                     <View style={styles.boxEventText1}><Text style={styles.boxEventText3} numberOfLines={1}>Giảm 70K</Text></View>
-                    <View style={styles.boxEventText2}></View>
                 </View>
             </View>
             <View style={styles.boxCardBottom}>
-                <Text style={styles.boxCardMiddleTime} numberOfLines={1}>0.33km . 23 phút</Text>
-                <Text style={styles.boxCardMiddleInfo} numberOfLines={2}>{title || ''}</Text>
-                <View style={styles.boxCardReview}>
-                    <Image style={styles.iconStar} source={iconStar} />
-                    <Text style={styles.boxCardTextReview} numberOfLines={1}> 4.8 . 10+ đánh giá</Text>
+                <Text style={styles.boxCardMiddleInfo} numberOfLines={1}>{title || ''}</Text>
+                <View style={styles.boxCardPrice}>
+                    <Text style={styles.textPriceAfterDiscount} numberOfLines={1}>15.000</Text>
+                    <Text style={styles.textPrice} numberOfLines={1}>15.000</Text>
                 </View>
+                <TouchableOpacity>
+                <Text style={styles.btnShowAdd}>Thêm</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -33,21 +33,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         justifyContent: 'space-between',
         alignItems: 'center',
-        minWidth: 160,
+        minWidth: 150,
         width: (ScreenWidth / 2) - 20,
-        maxWidth: 180,
-        height: 230,
+        maxWidth: 190,
+        height: 270,
         borderRadius: 18,
-        marginRight: 20,
-        shadowOffset: { width: -2, height: 4 },
-        shadowColor: '#171717',
-        shadowOpacity: 0.4,
-        shadowRadius: 5,
-        elevation: 3,
+        marginHorizontal: 10,
+        marginBottom: 40,
     },
     boxCardTop: {
         width: '100%',
-        height: '55%',
+        height: (ScreenWidth / 2) - 20,
+        maxHeight: 190,
         borderRadius: 18,
         shadowOffset: { width: -2, height: 4 },
         shadowColor: '#171717',
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
     boxEvent: {
         width: '50%',
         position: 'absolute',
-        left: -5,
+        left: 5,
         top: 5,
     },
     boxEventText1: {
@@ -78,17 +75,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
-        borderBottomLeftRadius: 0,
-    },
-    boxEventText2: {
-        zIndex: -1,
-        backgroundColor: '#AD242E',
-        height: 15,
-        width: 15,
-        position: 'absolute',
-        left: 0,
-        top: 22,
-        transform: [{ rotateY: "45deg" }, { rotateZ: "50deg" }]
+        borderBottomLeftRadius: 20,
     },
     boxEventText3: {
         color: '#FFF',
@@ -98,29 +85,43 @@ const styles = StyleSheet.create({
     },
     boxCardBottom: {
         width: '100%',
-        height: '45%',
+        height: 'auto',
         padding: 10,
-    },
-    boxCardMiddleTime: {
-        fontSize: 10,
     },
     boxCardMiddleInfo: {
         fontSize: 16,
-        fontWeight: '700',
+        fontWeight: '800',
         paddingTop: 5,
         paddingBottom: 5,
     },
-    boxCardReview: {
+    boxCardPrice: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
-    boxCardTextReview: {
-        fontSize: 10,
-        fontWeight: '500'
+    textPriceAfterDiscount:{
+        fontSize: 16,
+        fontWeight: '700',
+        paddingRight: 10,
     },
-    iconStar: {
-        width: 18,
-        height: 18,
+    textPrice: {
+        fontSize: 16,
+        fontWeight: '700',
+        color: '#727272',
+        textDecorationLine: 'line-through',
+        textDecorationColor: '#727272',
+    },
+    btnShowAdd:{
+        width: '100%',
+        color: '#01870C',
+        borderColor: '#01870C',
+        borderWidth: 2,
+        borderRadius: 20,
+        paddingTop: 5,
+        paddingBottom: 5,
+        marginTop: 5,
+        fontWeight: '800',
+        fontSize: 14,
+        textAlign: 'center',
     }
 });

@@ -4,6 +4,9 @@ import { StyleSheet, View, Image , TextInput, TouchableOpacity, StatusBar } from
 import { iconSearch, iconUser } from '../constants/icons';
 
 export default  function Header(){
+
+    
+
   return (
     <View style={styles.container}>
         <View style={styles.boxSearch}>

@@ -5,6 +5,7 @@ import { banner1, banner2, banner3, banner4, banner5 } from '../constants/banner
 import ItemBanner from './ItemBanner';
 
 export default function MenuBanner() {
+
     return (
         <View style={styles.container}>
             <ItemBanner banner={banner1} />

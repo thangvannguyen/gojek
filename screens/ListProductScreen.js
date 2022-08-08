@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar , Dimension
 import { useNavigation } from '@react-navigation/native';
 import HeaderProductBack from '../components/HeaderProductBack';
 import NavigationBellBottom from '../components/NavigationBellBottom';
-import MenuCardsRow from '../components/MenuCardsRow';
+import MenuCardsColumn from '../components/MenuCardsColumn';
 import TimeShip from '../components/TimeShip';
  
 let ScreenHeight = Dimensions.get("window").height;
@@ -48,10 +48,7 @@ const ListProductScreen = () => {
       <ScrollView>
         <View style={styles.container}>
             <TimeShip text="Giao hàng trong 20 phút" />
-            <MenuCardsRow  titleRow='A Đệ Quán' />
-            <MenuCardsRow titleRow='Không Say Không về' />
-            <MenuCardsRow titleRow='Bạn tôi' />
-            <MenuCardsRow titleRow='La Cà Quán' />
+            <MenuCardsColumn  titleRow='A Đệ Quán' />
         </View>
       </ScrollView>
       <View style={styles.bottom}>
